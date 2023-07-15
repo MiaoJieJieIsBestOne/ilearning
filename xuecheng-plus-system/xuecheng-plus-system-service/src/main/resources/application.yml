@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: system-service
+  datasource:
+    url: jdbc:mysql://124.222.2.121:3306/xc402_system?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+# 日志文件配置路径
+logging:
+  config: classpath:log4j2-dev.xml
+
+
