@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: gateway
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: 124.222.2.121:8848
+      discovery:
+        namespace: ${spring.profiles.active}
+        group: ilearning
+      config:
+        namespace: ${spring.profiles.active}
+        group: ilearning
+        file-extension: yaml
+        refresh-enabled: true
+#        shared-configs:
+#          - data-id: logging-${spring.profiles.active}.yaml
+#            group: ilearning
+#            refresh: true

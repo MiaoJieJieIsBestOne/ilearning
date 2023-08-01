@@ -6,6 +6,12 @@ server:
 spring:
   application:
     name: system-service
+  cloud:
+    nacos:
+      server-addr: 124.222.2.121:8848
+      discovery:
+        namespace: dev
+        group: ilearning
 
 # 日志文件配置路径
 logging:

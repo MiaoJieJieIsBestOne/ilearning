@@ -1,0 +1,50 @@
+#server:
+#  servlet:
+#    context-path: /content
+#  port: 63040
+
+spring:
+  application:
+    name: content-api
+  profiles:
+    active: dev
+#  datasource:
+#    url: jdbc:mysql://124.222.2.121:3306/xc402_content?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      server-addr: 124.222.2.121:8848
+      discovery:
+        namespace: ${spring.profiles.active}
+        group: ilearning
+      config:
+        namespace: ${spring.profiles.active}
+        group: ilearning
+        file-extension: yaml
+        refresh-enabled: true
+        extension-configs:
+          - data-id: content-mysql-${spring.profiles.active}.yaml
+            group: ilearning
+            refresh: true
+        shared-configs:
+          - data-id: swagger-${spring.profiles.active}.yaml
+            group: ilearning
+            refresh: true
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: ilearning
+            refresh: true
+          - data-id: freemarker-config-${spring.profiles.active}.yaml
+            group: ilearning
+            refresh: true
+
+#logging:
+#  config: classpath:log4j2-dev.xml
+
+#swagger:
+#  title: "ilearning content management system"
+#  description: "ilearning content management system description"
+#  base-package: com.xuecheng.content
+#  enabled: true
+#  version: 1.0.0

@@ -3,12 +3,13 @@ package com.xuecheng.content;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * 内容管理服务启动类
  */
 @EnableSwagger2Doc
-@SpringBootApplication(scanBasePackages = "com.xuecheng")
+@SpringBootApplication  //(scanBasePackages = "com.xuecheng")
 public class XuechengPlusContentApiApplication {
 
     public static void main(String[] args) {
